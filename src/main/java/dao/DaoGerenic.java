@@ -21,4 +21,18 @@ public class DaoGerenic<E> {
 
         }
     }
+
+    public E pesquisar(E entidade){
+
+        Object id = HibernateUtil.getPrimaryKey(entidade);
+        E e = (E)entityManager.find(entidade.getClass(),id);
+        return  e;
+    }
+
+    public E pesquisaID(long id,Class<E> entidade){
+        E e = (E)entityManager.find(entidade,id);
+        return e;
+
+    }
+
 }

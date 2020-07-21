@@ -35,6 +35,21 @@ public class AppTeste {
         daoGerenicPessoa.salvar(pessoaFisica);
         contaPolpancaDaoGerenic.salvar(contaPolpanca);
 
+    }
+    @Test
+    public void pesquisarId(){
+        DaoGerenic<PessoaFisica> daoGerenic = new DaoGerenic<PessoaFisica>();
+        PessoaFisica pessoaFisica = daoGerenic.pesquisaID(1L,PessoaFisica.class);
+
+        System.out.println(pessoaFisica.getNome());
+
+        DaoGerenic<ContaPolpanca> contaPolpancaDaoGerenic = new DaoGerenic<ContaPolpanca>();
+        ContaPolpanca contaPolpanca = contaPolpancaDaoGerenic.pesquisaID(2L,ContaPolpanca.class);
+
+        System.out.println(contaPolpanca.getPessoa().getNome());
+
+
+
 
     }
 }
