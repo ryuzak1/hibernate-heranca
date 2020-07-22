@@ -5,6 +5,8 @@ import model.ContaPolpanca;
 import model.PessoaFisica;
 import org.junit.Test;
 
+import java.util.List;
+
 public class AppTeste {
 
 
@@ -48,8 +50,18 @@ public class AppTeste {
 
         System.out.println(contaPolpanca.getPessoa().getNome());
 
+    }
 
+    @Test
+    public void listar(){
+        DaoGerenic<PessoaFisica> daoGerenic = new DaoGerenic<PessoaFisica>();
+        List<PessoaFisica> usePessoaFisicas = daoGerenic.listar(PessoaFisica.class);
+        for (PessoaFisica f: usePessoaFisicas) {
+            System.out.println(f.toString());
 
+        }
 
     }
+
+
 }
